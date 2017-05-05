@@ -36,7 +36,6 @@ class Bug {
                 guard let state = dict?["state"] as? String else {
                     throw InvalidBugDataErro.EmptyState
                 }
-                
                 switch state {
                 case "open": self.state = State.open
                 case "closed": self.state = State.closed
@@ -57,7 +56,7 @@ class Bug {
                 } else {
                     throw InvalidBugDataErro.EmptyComment
                 }
-
+                
                 
             } catch let error as NSError {
                 throw error
@@ -93,15 +92,14 @@ class Application {
                 let now = Date()
                 let diff = now.timeIntervalSince(bug.timestamp) / 60 / 60
                 
-                if diff < 24, timeRange == .pastDay{ // to 24 hours
+                if diff < 24, timeRange == .pastDay{                // to 24 hours
                     filtered.append(bug)
-                    break
-                } else if diff < 168, timeRange == .pastWeek { // to 7 days
+                    
+                } else if diff < 168, timeRange == .pastWeek {      // to 7 days
                     filtered.append(bug)
-                    break
-                } else if diff < 730, timeRange == .pastMonth { //to 30 days
+                    
+                } else if diff < 730, timeRange == .pastMonth {     //to 30 days
                     filtered.append(bug)
-                    break
                 }
             }
         }
