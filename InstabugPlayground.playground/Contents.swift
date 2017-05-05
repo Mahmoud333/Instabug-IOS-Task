@@ -98,7 +98,7 @@ class Application {
                 } else if diff < 168, timeRange == .pastWeek {      // to 7 days
                     filtered.append(bug)
                     
-                } else if diff < 730, timeRange == .pastMonth {     //to 30 days
+                } else if diff < 730, timeRange == .pastMonth {     // to 30 days
                     filtered.append(bug)
                 }
             }
