@@ -93,13 +93,13 @@ class Application {
                 let now = Date()
                 let diff = now.timeIntervalSince(bug.timestamp) / 60 / 60
                 
-                if diff < 48, timeRange == .pastDay{ // to 48 hours
+                if diff < 24, timeRange == .pastDay{ // to 24 hours
                     filtered.append(bug)
                     break
-                } else if diff < 336, timeRange == .pastWeek { // to 14 days
+                } else if diff < 168, timeRange == .pastWeek { // to 7 days
                     filtered.append(bug)
                     break
-                } else if diff < 1460, timeRange == .pastMonth { //to 60 days
+                } else if diff < 730, timeRange == .pastMonth { //to 30 days
                     filtered.append(bug)
                     break
                 }
