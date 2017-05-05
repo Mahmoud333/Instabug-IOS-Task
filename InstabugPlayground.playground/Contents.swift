@@ -61,12 +61,10 @@ class Bug {
             } catch let error as NSError {
                 throw error
             }
-            
         } else {
             throw InvalidBugDataErro.ErrorJSONData
         }
     }
-    
 }
 
 enum TimeRange {
